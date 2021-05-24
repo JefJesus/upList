@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Consulta e Alteração</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/prods.css">
+</head>
+<body>
+    
+    <div class="searchArea">
+        <div id="selectBox">
+            <select name="select" id="boxSel">
+            <option value="cod" selected>ID</option>
+            <option value="nome">Nome</option>
+            <option value="fabricante">Fabricante</option>
+            </select>
+        </div>
+        <div><input type="text" id="tInput" placeholder="Pesquisa" autofocus></div>
+        <div><button id="btnSearch"><img src="../img/loupe.png" id="searchIcon"></button></div>
+    </div>
+    <table id="tbProds">
+        <thead>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Fabricante</th>
+            <th>Data / Hora</th>
+            <th>Controles</th>
+        </thead>
+        <tbody id="tbodyList">
+
+        </tbody>
+    </table>
+    <div class="paginate">
+        <div id="btnFirst">&#171;</div>
+        <div id="btnPrev">&lt;</div>
+        <div class="btnNumber">
+            <label id="lblPage"></label>        
+        </div>
+        <div id="btnNext">&gt;</div>
+        <div id="btnLast">&#187;</div>
+    </div>
+
+    <a href="../index.html">
+        <button id="btnVoltar">Voltar</button>
+    </a>
+
+    <div class="popUpWrapper">
+        <div class="popUp">
+            <div class="popUpClose">X</div>                
+            <div class="popUpContent">
+                <div class="codigo">
+                        <label>Código:</label>
+                        <label id="lblCod"></label>
+                </div>
+                <div>
+                    <label>Nome:</label>
+                    <input type="text" id="inpNome">
+
+                    <label>Descrição:</label>
+                    <input type="text" id="inpDesc">
+
+                    <label>Quantidade:</label>
+                    <input type="text" id="inpQtda">
+
+                    <label>Fabricante:</label>
+                    <input type="text" id="inpFab">
+                </div>
+                <div id="btnAlterar" class="closeLinkPopUp">
+                    Alterar
+                </div>            
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="../js/prods.js"></script>
+</body>
+</html>
